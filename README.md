@@ -1,4 +1,20 @@
 # DuetCS
+Coding style has direct impact on code comprehension. Automatically transferring code style to user's preference or consistency can facilitate project cooperation and maintenance, as well as maximize the value of open-source code. we used an unsupervised methods to transfer code to arbitrary code styles. We leverage Big Code resources to learn style and content embedding separately. We provides two modes - generation and retrieval to output a piece of code with the same functionality and the desired target style. 
+
+![workflow](/images/workflow.png "workflow")
+
+## Datasets
+
+### Big Code Resources
+
+This dataset serves as unsupervised training data and the database for retrieval mode.
+
+We use the Github repositories database - [Public Git Archive](https://github.com/src-d/datasets/tree/master/PublicGitArchive).
+
+### Testing datasets
+- Java dataset: Java-small (11 Java projects with about 700K code samples)
+- JavaScript dataset: JSformat (19 top-starred JS repositories on GitHub)
+- C++ dataset: Codeforces (20,721 C++ code samples in total)
 
 ## Dependencies
 - Python 3.5.2
@@ -7,24 +23,18 @@
 - ANTLR4 (Java target)
 - TensorFlow 1.10.0
 - Numpy 1.13.3
-- Keras 2.2.2
 - PyTorch 1.5.1
 
-## Prepare data and generating feature embedding
+## Prepare database and training feature embedding module
 
-encode the original raw code to initial vector
+`sh create_feature_em.sh path_to_your_database`
 
-`python3 data_prepare.py`
+data_prepare.py: encode the original raw code to initial vector
 
-generate the initial feature embedding
+feature.py: generate the initial feature embedding
 
-`python3 feature.py`
+siamese.py, training.py: train siamese network for the classification task
 
-## Train siamese network for the classification task
-
-`python3 siamese.py`
-
-`python3 training.py`
 
 ## Create feature embedding for input code/code examples in target style
 
