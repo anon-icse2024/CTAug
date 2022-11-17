@@ -8,6 +8,7 @@ Coding style has direct impact on code comprehension. Automatically transferring
 ### Big Code Resources
 
 This dataset serves as unsupervised training data and the database for retrieval mode.
+
 We use the Github repositories database - [Public Git Archive](https://github.com/src-d/datasets/tree/master/PublicGitArchive).
 
 ### Testing datasets
@@ -24,21 +25,16 @@ We use the Github repositories database - [Public Git Archive](https://github.co
 - Numpy 1.13.3
 - PyTorch 1.5.1
 
-## Prepare data and generating feature embedding
+## Prepare database and training feature embedding module
 
-encode the original raw code to initial vector
+`sh create_feature_em.sh path_to_your_database`
 
-`python3 data_prepare.py`
+data_prepare.py: encode the original raw code to initial vector
 
-generate the initial feature embedding
+feature.py: generate the initial feature embedding
 
-`python3 feature.py`
+siamese.py, training.py: train siamese network for the classification task
 
-## Train siamese network for the classification task
-
-`python3 siamese.py`
-
-`python3 training.py`
 
 ## Create feature embedding for input code/code examples in target style
 
