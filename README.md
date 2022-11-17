@@ -14,7 +14,7 @@ We use the Github repositories database - [Public Git Archive](https://github.co
 ### Testing datasets
 - Java dataset: Java-small (11 Java projects with about 700K code samples)
 - JavaScript dataset: JSformat (19 top-starred JS repositories on GitHub)
-- C++ dataset: Codeforces (20,721 C++ code samples in total)
+- C++ dataset: Codeforces (20,721 C++ code samples)
 
 ## Dependencies
 - Python 3.5.2
