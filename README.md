@@ -1,4 +1,4 @@
-# DuetCS
+# DuetCS - Automatic code style transfer
 Coding style has direct impact on code comprehension. Automatically transferring code style to user's preference or consistency can facilitate project cooperation and maintenance, as well as maximize the value of open-source code. we used an unsupervised methods to transfer code to arbitrary code styles. We leverage Big Code resources to learn style and content embedding separately. We provides two modes - generation and retrieval to output a piece of code with the same functionality and the desired target style. 
 
 ![workflow](/doc/DuetCS.png "workflow")
